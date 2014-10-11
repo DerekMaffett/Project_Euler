@@ -1,4 +1,7 @@
 class Fibonacci
+  def initialize
+    @fib_memo = { 1 => 0, 2 => 1 }
+  end
   # This method is slightly less efficient since it requires an unnecessary
   # array
   #
@@ -14,6 +17,10 @@ class Fibonacci
       sum += n2 if n2.even?
     end
     sum
+  end
+
+  def find_fibonacci(num)
+    @fib_memo[num] ||= find_fibonacci(num - 2) + find_fibonacci(num - 1)
   end
 
   # Separate method might not be necessary?
