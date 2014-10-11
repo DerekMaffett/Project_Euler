@@ -3,7 +3,7 @@ class Fibonacci
     @fib_memo = { 1 => 0, 2 => 1 }
   end
   # This method is slightly less efficient since it requires an unnecessary
-  # array
+  # array, but it does seem slightly more readable.
   #
   # def sum_of_evens_under(num)
   #   build_fibonacci_array_under(num).inject(0) { |sum, i| i.even? ? sum + i : sum }
